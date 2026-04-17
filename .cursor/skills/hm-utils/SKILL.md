@@ -6,7 +6,8 @@ description: >-
   on hm-utils, asking about its stack, file structure, conventions, or build setup.
 ---
 ## What is this app?
-The app in exploring mode, do not focus in building the UI for now, I want to explore GoogleDrive and Google Doc API
+The app contain several utilities for personal use, include
+- Get a random topic (a tab in highest level of google doc file) from my personal google drive folder
 ---
 
 ## Tech Stack
@@ -18,7 +19,7 @@ The app in exploring mode, do not focus in building the UI for now, I want to ex
 | Language | TypeScript ~6 |
 | React Compiler | Enabled via `babel-plugin-react-compiler` + `@rolldown/plugin-babel` |
 | Linting | ESLint 9 (flat config) + `typescript-eslint` + `eslint-plugin-react-hooks` + `eslint-plugin-react-refresh` |
-| Styling | Plain CSS with custom properties and nesting; no CSS-in-JS |
+| Styling | MUI (`@mui/material`) with Emotion (`@emotion/react`, `@emotion/styled`); prefer raw MUI styling — `sx` prop, `styled()` API, and theme tokens |
 
 ---
 
@@ -33,13 +34,11 @@ hm-utils/
   tsconfig.node.json    Tooling TS config for vite.config.ts
   eslint.config.js      Flat config; ignores dist; browser globals
   src/
-    main.tsx            createRoot + StrictMode + App
-    App.tsx             Root component (hero UI, counter state)
+    main.tsx            createRoot + StrictMode + ThemeProvider (MUI) + CssBaseline + App
+    App.tsx             Root component; renders RandomTopicWidget
     index.css           CSS variables (light/dark via prefers-color-scheme), #root layout
-    App.css             Component styles: counter, hero, .ticks
-    assets/
-      react.svg
-      vite.svg
+    components/
+      RandomTopicWidget.tsx
   public/
     favicon.svg
     icons.svg           SVG sprite (reference as /icons.svg#icon-name)

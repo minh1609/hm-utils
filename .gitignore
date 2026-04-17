@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local env (contains secrets — never commit)
+.env
+
 # Google service account credentials
 service-account.json
 *.service-account.json
