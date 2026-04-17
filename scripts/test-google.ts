@@ -2,8 +2,7 @@
  * Quick smoke-test for the Google Drive + Docs utility.
  *
  * Usage:
- *   npx tsx scripts/test-google.ts           # uses the hardcoded FOLDER_ID
- *   npx tsx scripts/test-google.ts <ID>      # override with a different folder
+ *   npm run test:google                      # uses the hardcoded FOLDER_ID
  *
  * The folder must be shared with the service account:
  *   hm-utils@hm-utils.iam.gserviceaccount.com
